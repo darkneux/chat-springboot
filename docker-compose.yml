@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  chat-app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    networks:
+      - chat-network
+
+networks:
+  chat-network:
+    driver: bridge
